@@ -1,6 +1,6 @@
 ---
 - name: Retrieve Login Credentials
-  include_vars: /home/temi/EVE/VXLAN/secret.yaml
+  include_vars: /home/temi/EVE/VXLAN/ansible-code/secret.yaml
 
 - name: Define Providers
   set_fact:
