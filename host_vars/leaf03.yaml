@@ -1,0 +1,27 @@
+---
+hostname: leaf03
+mgmt_ip: 192.168.1.133
+router_id: 10.10.30.3
+loopbacks:
+        - interface_name: loopback0
+          mode: layer3
+          ip_address: 10.10.10.3
+          subnet_mask: 32
+          interface_type: loopback
+          description: "leaf03 loopback0"
+
+        - interface_name: loopback1
+          mmode: layer3
+          ip_address: 10.10.20.3
+          subnet_mask: 32
+          interface_type: loopback
+          description: "leaf03 loopback1"
+
+
+layer3_interfaces:
+        - interface: Ethernet1/1
+          description: Uplink to Spine01
+
+        - interface: Ethernet 1/2
+          description: Uplink to Spine02
+

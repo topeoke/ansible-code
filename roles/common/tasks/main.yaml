@@ -1,0 +1,4 @@
+---
+- import_tasks: configure_interfaces.yml
+- import_tasks: fabric_feature.yml
+- import_tasks: fabric_underlay_ospf.yml

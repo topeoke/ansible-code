@@ -1,0 +1,8 @@
+---
+
+layer3_interfaces:
+  - interface: Ethernet1/1
+    description : link to spine01
+
+  - interface: Ethernet1/2
+    description: uplink to spine02

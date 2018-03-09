@@ -1,0 +1,20 @@
+---
+- name: Retrieve Login Credentials
+  include_vars: /home/temi/EVE/VXLAN/secret.yaml
+
+- name: Define Providers
+  set_fact:
+  provider:
+  host: "{{ ansible_host }}"
+  username: "{{ creds['username'] }}"
+  password: "{{ creds['password'] }}"
+
+
+- name: Enable NXOS Features 
+  with_items: "{{ features }}"
+  nxos_feature:
+   provider: "{{ provider }}"
+   feature: "{{ item.feature }}"
+   state: enabled
+ 
+  

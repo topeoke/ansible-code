@@ -1,0 +1,21 @@
+---
+hostname: spine01
+mgmt_ip: 192.168.1.131
+router_id: 10.10.30.101
+loopbacks:
+        - interface_name: loopback0
+          mode: layer3
+          ip_address: 10.10.10.101
+          subnet_mask: 32
+          interface_type: loopback
+          description: "spine01 loopback0"
+
+        - interface_name: loopback1
+          mmode: layer3
+          ip_address: 10.10.20.101
+          subnet_mask: 32
+          interface_type: loopback
+          description: "spine01 loopback1"
+
+
+

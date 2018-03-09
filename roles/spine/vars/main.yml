@@ -1,0 +1,28 @@
+---
+# vars file for /etc/ansible/roles/leaf01
+#hostname: leaf01
+#mgmt_ip: 192.168.1.131
+#username: admin
+#password: admin
+#interfaces:
+#  - interface_name: loopback0
+#    mode: layer3
+#   ip_address: 10.10.10.1
+#   subnet_mask: 32
+#   interface_type: loopback
+#   description: "leaf01 loopback0"
+#
+
+
+layer3_interfaces:
+  - interface: Ethernet1/1
+    description : link to leaf01
+
+  - interface: Ethernet1/2
+    description: uplink to leaf02
+ 
+  - interface: Ethernet1/3
+    description: uplink to leaf03
+
+  - interface: Ethernet1/4
+    description: uplink to leaf04

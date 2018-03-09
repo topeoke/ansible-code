@@ -1,0 +1,27 @@
+---
+# vars file for /etc/ansible/roles/leaf01
+#hostname: leaf01
+#mgmt_ip: 192.168.1.131
+#username: admin
+#password: admin
+#interfaces:
+#  - interface_name: loopback0
+#    mode: layer3
+#   ip_address: 10.10.10.1
+#   subnet_mask: 32
+#   interface_type: loopback
+#   description: "leaf01 loopback0"
+#
+
+ospf_instance_id: 100
+ospf_authentication_pass: password123
+ospf_area: 0.0.0.0
+bgp_asn: 65700
+
+
+features:
+  - feature: bgp
+  - feature: ospf
+  - feature: lacp
+  - feature: interface-vlan
+

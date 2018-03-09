@@ -1,0 +1,25 @@
+---
+hostname: leaf01
+mgmt_ip: 192.168.1.131
+router_id: 10.10.30.1
+loopbacks:
+        - interface_name: loopback0
+          mode: layer3
+          ip_address: 10.10.10.1
+          subnet_mask: 32
+          interface_type: loopback
+          description: "leaf01 loopback0"
+
+        - interface_name: loopback1
+          mode: layer3
+          ip_address: 10.10.20.1
+          subnet_mask: 32
+          interface_type: loopback
+          description: "leaf01 loopback1"
+
+layer3_interfaces:
+        - interface: Ethernet1/1
+          description: link to spine01
+
+        - interface: Ethernet1/2
+          description: link to spine02

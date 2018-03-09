@@ -1,0 +1,58 @@
+##############################################
+#Playbook for confguring NEXUS Devices
+#Title: To Be Determined
+#
+#Author: Temi Oke
+#                        
+#############################################
+
+---
+
+- block:
+    - name: Retrieve Login Credentials
+      include_vars: /home/temi/EVE/VXLAN/secret.yaml
+
+    - name: Define Providers
+      set_fact:
+       provider:
+        host: "{{ ansible_host }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+
+    - name: Create Loopback Interface
+      with_items: "{{ loopbacks }}"
+      nxos_interface:
+            provider: "{{ provider }}"
+            transport: cli
+            interface: "{{ item.interface_name }}"
+            description: "{{ item.description }}"
+            mode: layer3
+            state: present
+
+    - name: Create Layer3 Interface
+      with_items: "{{ layer3_interfaces }}"
+      nxos_interface:
+            provider: "{{ provider }}"
+            interface: "{{ item.interface }}"
+            description: "{{ item.description }}"
+            mode: layer3
+            state: present
+
+    - name: Configuure ipv4 address on loopback interface
+      with_items: "{{ loopbacks }}"
+      nxos_ip_interface:
+            provider: "{{ provider }}"
+            interface: "{{ item.interface_name }}"
+            transport: cli
+            version: v4
+            addr: "{{ item.ip_address }}"
+            mask: "{{ item.subnet_mask }}"
+
+    - name: Configure IP Unnumbered on the uplink to the Spine
+      with_items: "{{ layer3_interfaces }}"
+      nxos_config:
+          provider: "{{ provider }}"
+          lines:      
+            - medium p2p
+            - ip unnumbered loopback 0
+          parents: "interface {{ item.interface }}"
