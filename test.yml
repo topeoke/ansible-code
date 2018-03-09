@@ -1,0 +1,8 @@
+---
+
+- name: Testing the new role file
+  hosts: all
+  connection: local
+  roles:
+   - common
+
