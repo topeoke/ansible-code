@@ -1,6 +1,6 @@
 ---
 hostname: spine01
-mgmt_ip: 192.168.1.131
+mgmt_ip: 192.168.1.171
 router_id: 10.10.30.101
 loopbacks:
         - interface_name: loopback0
@@ -16,6 +16,20 @@ loopbacks:
           subnet_mask: 32
           interface_type: loopback
           description: "spine01 loopback1"
+
+
+layer3_interfaces:
+        - interface: Ethernet1/1
+          description: Link to leaf01
+
+        - interface: Ethernet1/2
+          description: Link to leaf02
+
+        - interface: Ethernet1/3
+          description: Link to leaf04
+
+        - interface: Ethernet1/4
+          description: link to leaf03
 
 
 
