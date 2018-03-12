@@ -14,7 +14,7 @@
   nxos_config:
    provider: "{{ provider }}"
    lines:
-    - ip pim rp-address {{ anycast_rp_loopback }} group_list  {{ multicast_group }}
+    - ip pim rp-address {{ anycast_rp_loopback }} group-list  {{ multicast_group }}
     - ip pim rp-candidate loopback1 group-list {{ multicast_group}}
     - ip pim ssm range {{ ssm_range }}
     - ip pim anycast-rp {{ anycast_rp_loopback }} {{ spine01_loopback0 }}
