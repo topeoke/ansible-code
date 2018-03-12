@@ -2,6 +2,7 @@
 hostname: leaf03
 mgmt_ip: 192.168.1.133
 router_id: 10.10.30.3
+role: leaf
 loopbacks:
         - interface_name: loopback0
           mode: layer3

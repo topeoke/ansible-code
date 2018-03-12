@@ -2,6 +2,7 @@
 hostname: spine02
 mgmt_ip: 192.168.1.172
 router_id: 10.10.30.102
+role: spine
 loopbacks:
         - interface_name: loopback0
           mode: layer3
