@@ -11,7 +11,7 @@ loopbacks:
           description: "spine02 loopback0"
 
         - interface_name: loopback1
-          mmode: layer3
+          mode: layer3
           ip_address: 10.10.20.102
           subnet_mask: 32
           interface_type: loopback
