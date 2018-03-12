@@ -4,3 +4,5 @@
 - import_tasks: fabric_underlay_ospf.yml
 - import_tasks: vxlan_feature.yml
 - import_tasks: evpn_control_plane.yml
+- import_tasks: spine_anycast_rp.yml
+- import_tasks: leaf_anycast-rp.yml
