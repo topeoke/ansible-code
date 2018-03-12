@@ -13,7 +13,7 @@ loopbacks:
 
         - interface_name: loopback1
           mode: layer3
-          ip_address: 10.10.20.101
+          ip_address: "{{ anycast_rp_loopback }}"
           subnet_mask: 32
           interface_type: loopback
           description: "spine01 loopback1"
