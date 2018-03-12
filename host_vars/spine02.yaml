@@ -6,7 +6,7 @@ role: spine
 loopbacks:
         - interface_name: loopback0
           mode: layer3
-          ip_address: 10.10.10.102
+          ip_address: "{{ spine02_loopback0 }}"
           subnet_mask: 32
           interface_type: loopback
           description: "spine02 loopback0"
