@@ -16,7 +16,7 @@
 ospf_instance_id: 100
 ospf_authentication_pass: password123
 ospf_area: 0.0.0.0
-bgp_asn: 65700
+bgp_asn: 65300
 multicast_group: 225.0.0.0/8
 anycast_rp_loopback: 100.100.100.100
 ssm_range: 232.0.0.0/8
