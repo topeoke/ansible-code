@@ -24,4 +24,13 @@ features:
   - feature: ospf
   - feature: lacp
   - feature: interface-vlan
+  - feature: pim
+  - feature: lldp
+  - feature: nxapi
+  - feature: bash-shell
+  - feature: scp-server
+  - feature: dhcp
 
+vxlan_features:
+  - feature: vn-segment
+  - feature: nv overlay
