@@ -2,5 +2,5 @@
 - import_tasks: configure_interfaces.yml
 - import_tasks: fabric_feature.yml
 - import_tasks: fabric_underlay_ospf.yml
-- import_tasks: vxlan_features.yml
+- import_tasks: vxlan_feature.yml
 - import_tasks: evpn_control_plane.yml
