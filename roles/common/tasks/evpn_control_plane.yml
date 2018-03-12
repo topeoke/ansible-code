@@ -1,0 +1,18 @@
+---
+- name: Retrieve Login Credentials
+  include_vars: /home/temi/EVE/VXLAN/ansible-code/secret.yaml
+
+- name: Define Providers
+  set_fact:
+  provider:
+  host: "{{ ansible_host }}"
+  username: "{{ creds['username'] }}"
+  password: "{{ creds['password'] }}"
+
+
+- name: Enable EVPN Control Plane
+  nxos_evpn_global:
+   provider: "{{ provider }}"
+   nv_overlay_evpn: true
+ 
+  
