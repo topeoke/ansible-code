@@ -1,0 +1,34 @@
+---
+- name: Retrieve Login Credentials
+  include_vars: /home/temi/EVE/VXLAN/ansible-code/secret.yaml
+
+- name: Define Providers
+  set_fact:
+  provider:
+  host: "{{ ansible_host }}"
+  username: "{{ creds['username'] }}"
+  password: "{{ creds['password'] }}"
+
+- name: Enable OSPF instance globally
+  nxos_ospf:
+    provider: "{{ provider }}"
+    ospf: "{{ ospf_instance_id }}"
+    state: present
+
+- name: Enable PIM on loopback interfaces
+  with_items: "{{ loopbacks }} "
+  nxos_pim_interface:
+   provider: "{{ provider }}"
+   interface: "{{ item.interface_name }}"
+   state: present
+
+    
+- name: Enable PIM on layer3 intefaces
+  with_items: "{{ layer3_interfaces }}"
+  nxos_pim_interface:
+   provider: "{{ provider }}"
+   interface: "{{ item.interface }}"
+   state: present
+
+ 
+  
