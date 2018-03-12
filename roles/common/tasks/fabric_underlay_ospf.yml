@@ -17,8 +17,10 @@
 
 - name: Enable OSPF Router ID
   nxos_ospf_vrf:
+   provider: "{{ provider }}"
    ospf: "{{ ospf_instance_id }}"
    router_id: "{{ router_id }}"
+   state: present
 
 - name: Enable OSPF on loopback interfaces
   with_items: "{{ loopbacks }} "
