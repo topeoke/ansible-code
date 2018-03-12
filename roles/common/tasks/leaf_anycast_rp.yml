@@ -16,5 +16,5 @@
    lines:
     - ip pim rp-address "{{ anycast_rp_loopback }}" group_list  "{{ multicast_group }}"
     - ip pim ssm range "{{ ssm_range }}"
-    when: role == "leaf"
+  when: role == "leaf"
   
