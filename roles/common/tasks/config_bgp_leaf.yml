@@ -54,4 +54,5 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{ spine02_loopback0 }}"
    afi: l2vpn
+   safi: unicast
   when: role == "leaf"
