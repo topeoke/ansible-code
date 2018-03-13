@@ -26,7 +26,7 @@
    remote_as: "{{ bgp_asn }}"
    update_source: "{{ loopback0 }}"
    state: present
-  when: role == "spine
+  when: role == "spine"
 
 
 - name: Configure BGP Address Family on Spine Switches
