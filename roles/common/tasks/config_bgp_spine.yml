@@ -9,6 +9,14 @@
   username: "{{ creds['username'] }}"
   password: "{{ creds['password'] }}"
 
+- name: Configuring Global BGP on Spine Switches
+  nxos_bgp:
+   provider: "{{ provider }}"
+   asn: "{{ bgp_asn }}"
+   router_id: "{{ router_id }}"
+   state: present
+   when: role == "spine"
+
 
 - name: Config BGP on Spine Switches
   nxos_bgp_neighbor:
