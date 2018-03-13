@@ -20,4 +20,5 @@
     - ip pim anycast-rp {{ anycast_rp_loopback }} {{ spine01_loopback0 }}
     - ip pim anycast-rp {{ anycast_rp_loopback }} {{ spine02_loopback0 }}
   when: role == "spine"
+  save_when: always
   

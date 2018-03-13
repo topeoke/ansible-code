@@ -17,4 +17,5 @@
     - ip pim rp-address {{ anycast_rp_loopback }} group-list {{ multicast_group }}
     - ip pim ssm range {{ ssm_range }}
   when: role == "leaf"
+  save_when: always
   
