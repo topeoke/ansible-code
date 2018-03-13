@@ -24,7 +24,7 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{  spine01_loopback0 }}"
    remote_as: "{{ bgp_asn }}"
-   update_source: "{{ loopback0 }}"
+   update_source: loopback0
    state: present
   when: role == "leaf"
 
@@ -44,7 +44,7 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{  spine02_loopback0 }}"
    remote_as: "{{ bgp_asn }}"
-   update_source: "{{ loopback0 }}"
+   update_source: loopback0
    state: present
   when: role == "leaf"
 
