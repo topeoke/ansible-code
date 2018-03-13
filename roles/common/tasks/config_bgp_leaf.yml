@@ -16,7 +16,7 @@
    asn: "{{ bgp_asn }}"
    router_id: "{{ router_id }}"
    state: present
-   when: role == "leaf"
+  when: role == "leaf"
 
 - name: Configuring BGP Neighbor on Leaf Switches
   nxos_bgp_neighbor:
@@ -26,7 +26,7 @@
    remote_as: "{{ bgp_asn }}"
    update_source: "{{ loopback0 }}"
    state: present
-   when: role == "leaf"
+  when: role == "leaf"
 
 
 - name: Configuring BGP Address Family on Leaf Switches
@@ -35,7 +35,7 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{ spine01_loopback0 }}"
    afi: l2vpn
-   when: role == "leaf"
+  when: role == "leaf"
 
 - name: Config BGP on Leaf Switches
   nxos_bgp_neighbor:
@@ -45,7 +45,7 @@
    remote_as: "{{ bgp_asn }}"
    update_source: "{{ loopback0 }}"
    state: present
-   when: role == "leaf"
+  when: role == "leaf"
 
 
 - name: Configure BGP Address Family on Leaf Switches
@@ -54,4 +54,4 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{ spine02_loopback0 }}"
    afi: l2vpn
-   when: role == "leaf"
+  when: role == "leaf"
