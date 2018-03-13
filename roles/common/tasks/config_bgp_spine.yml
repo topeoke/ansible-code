@@ -35,6 +35,6 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{  leaf_loopback_network }}"
    afi: l2vpn
-   safi: unicast
+   safi: evpn
    route_reflector_client: true
   when: role == "spine"

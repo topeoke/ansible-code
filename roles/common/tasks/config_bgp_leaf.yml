@@ -35,6 +35,7 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{ spine01_loopback0 }}"
    afi: l2vpn
+   safi: evpn
   when: role == "leaf"
 
 - name: Config BGP on Leaf Switches
@@ -54,5 +55,5 @@
    asn: "{{ bgp_asn }}"
    neighbor: "{{ spine02_loopback0 }}"
    afi: l2vpn
-   safi: unicast
+   safi: evpn
   when: role == "leaf"
