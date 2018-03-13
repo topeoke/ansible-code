@@ -10,7 +10,15 @@
   password: "{{ creds['password'] }}"
 
 
-- name: Config BGP on Leaf Switches
+- name: Configuring Global BGP on Leaf Switches
+  nxos_bgp:
+   provider: "{{ provider }}"
+   asn: "{{ bgp_asn }}"
+   router_id: "{{ router_id }}"
+   state: present
+   when: role == "leaf"
+
+- name: Configuring BGP Neighbor on Leaf Switches
   nxos_bgp_neighbor:
    provider: "{{ provider }}"
    asn: "{{ bgp_asn }}"
@@ -22,7 +30,7 @@
    when: role == "leaf"
 
 
-- name: Configure BGP Address Family on Leaf Switches
+- name: Configuring BGP Address Family on Leaf Switches
   nxos_bgp_neighbor_af:
    provider: "{{ provider }}"
    asn: "{{ bgp_asn }}"
