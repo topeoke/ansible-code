@@ -22,7 +22,6 @@
   nxos_bgp_neighbor:
    provider: "{{ provider }}"
    asn: "{{ bgp_asn }}"
-   router_id: "{{ router_id }}"
    neighbor: "{{  spine01_loopback0 }}"
    remote_as: "{{ bgp_asn }}"
    update_source: "{{ loopback0 }}"
@@ -42,7 +41,6 @@
   nxos_bgp_neighbor:
    provider: "{{ provider }}"
    asn: "{{ bgp_asn }}"
-   router_id: "{{ router_id }}"
    neighbor: "{{  spine02_loopback0 }}"
    remote_as: "{{ bgp_asn }}"
    update_source: "{{ loopback0 }}"

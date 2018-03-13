@@ -22,7 +22,6 @@
   nxos_bgp_neighbor:
    provider: "{{ provider }}"
    asn: "{{ bgp_asn }}"
-   router_id: "{{ router_id }}"
    neighbor: "{{  leaf_loopback_network }}"
    remote_as: "{{ bgp_asn }}"
    update_source: "{{ loopback0 }}"
