@@ -22,6 +22,7 @@ anycast_rp_loopback: 100.100.100.100
 ssm_range: 232.0.0.0/8
 spine01_loopback0: 10.10.10.101
 spine02_loopback0: 10.10.10.102
+leaf_loopback_network: 10.10.10.0/24
 
 
 features:
