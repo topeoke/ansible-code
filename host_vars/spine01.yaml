@@ -3,6 +3,8 @@ hostname: spine01
 mgmt_ip: 192.168.1.171
 router_id: 10.10.30.101
 role: spine
+loopback0: "{{ spine01_loopback0 }}"
+
 loopbacks:
         - interface_name: loopback0
           mode: layer3
