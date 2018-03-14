@@ -56,4 +56,5 @@
    neighbor: "{{ spine02_loopback0 }}"
    afi: l2vpn
    safi: evpn
+   send_community: both
   when: role == "leaf"
