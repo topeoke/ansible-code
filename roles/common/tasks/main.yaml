@@ -9,3 +9,4 @@
 - import_tasks: leaf_anycast_rp.yml
 - import_tasks: config_bgp_spine.yml
 - import_tasks: config_bgp_leaf.yml
+- import_tasks: bgp_community.yml
