@@ -2,6 +2,9 @@
 hostname: leaf04
 mgmt_ip: 192.168.1.134
 router_id: 10.10.30.4
+role: leaf
+loopback0: 10.10.10.4
+
 loopbacks:
         - interface_name: loopback0
           mode: layer3

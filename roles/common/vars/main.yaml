@@ -16,7 +16,13 @@
 ospf_instance_id: 100
 ospf_authentication_pass: password123
 ospf_area: 0.0.0.0
-bgp_asn: 65700
+bgp_asn: 65300
+multicast_group: 225.0.0.0/8
+anycast_rp_loopback: 100.100.100.100
+ssm_range: 232.0.0.0/8
+spine01_loopback0: 10.10.10.101
+spine02_loopback0: 10.10.10.102
+leaf_loopback_network: 10.10.10.0/24
 
 
 features:
@@ -24,4 +30,13 @@ features:
   - feature: ospf
   - feature: lacp
   - feature: interface-vlan
+  - feature: pim
+  - feature: lldp
+  - feature: nxapi
+  - feature: bash-shell
+  - feature: scp-server
+  - feature: dhcp
 
+vxlan_features:
+  - feature: vn-segment-vlan-based
+  - feature: nv overlay

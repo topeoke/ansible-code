@@ -2,6 +2,8 @@
 hostname: leaf02
 mgmt_ip: 192.168.1.132
 router_id: 10.10.30.2
+role: leaf
+loopback0: 10.10.10.2
 loopbacks:
         - interface_name: loopback0
           mode: layer3
@@ -16,6 +18,13 @@ loopbacks:
           subnet_mask: 32
           interface_type: loopback
           description: "leaf02 loopback1"
+
+        - interface_name: loopback2
+          mode: layer3
+          ip_address: 10.10.30.2
+          subnet_mask: 32
+          interface_type: loopback
+          description: "leaf02 loopback2"
 
 layer3_interfaces:
         - interface: Ethernet1/1

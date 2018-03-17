@@ -1,0 +1,24 @@
+---
+- name: Retrieve Login Credentials
+  include_vars: /home/temi/EVE/VXLAN/ansible-code/secret.yaml
+
+- name: Define Providers
+  set_fact:
+  provider:
+  host: "{{ ansible_host }}"
+  username: "{{ creds['username'] }}"
+  password: "{{ creds['password'] }}"
+
+
+- name: Configure Anycast RP on Spine Switches
+  nxos_config:
+   provider: "{{ provider }}"
+   lines:
+    - ip pim rp-address {{ anycast_rp_loopback }} group-list  {{ multicast_group }}
+    - ip pim rp-candidate loopback1 group-list {{ multicast_group}}
+    - ip pim ssm range {{ ssm_range }}
+    - ip pim anycast-rp {{ anycast_rp_loopback }} {{ spine01_loopback0 }}
+    - ip pim anycast-rp {{ anycast_rp_loopback }} {{ spine02_loopback0 }}
+  when: role == "spine"
+  save_when: always
+  

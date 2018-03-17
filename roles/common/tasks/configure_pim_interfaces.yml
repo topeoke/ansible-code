@@ -15,28 +15,20 @@
     ospf: "{{ ospf_instance_id }}"
     state: present
 
-- name: Enable OSPF Router ID
-  nxos_ospf_vrf:
-   provider: "{{ provider }}"
-   ospf: "{{ ospf_instance_id }}"
-   router_id: "{{ router_id }}"
-   state: present
-
-- name: Enable OSPF on loopback interfaces
+- name: Enable PIM on loopback interfaces
   with_items: "{{ loopbacks }} "
-  nxos_interface_ospf:
+  nxos_pim_interface:
    provider: "{{ provider }}"
    interface: "{{ item.interface_name }}"
-   ospf: "{{ ospf_instance_id }}"
-   area: "{{ ospf_area }}"
+   state: present
+
     
-- name: Enable OSPF on layer3 intefaces 
+- name: Enable PIM on layer3 intefaces
   with_items: "{{ layer3_interfaces }}"
-  nxos_interface_ospf:
+  nxos_pim_interface:
    provider: "{{ provider }}"
    interface: "{{ item.interface }}"
-   ospf: "{{ ospf_instance_id }}"
-   area: "{{ ospf_area }}"
+   state: present
 
  
   
